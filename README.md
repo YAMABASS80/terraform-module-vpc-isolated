@@ -28,7 +28,7 @@ You can import this module from your code base such as,
 
 ```terraform
 module "network" {
-  source         = "git@github.com:YAMABASS80/terraform-module-vpc-no-nat.git?ref=1.0.0"
+  source         = "git@github.com:YAMABASS80/terraform-module-vpc-isolated.git?ref=2.0.0"
   vpc_cidr_block = "10.0.0.0/16"
   resource_tag_prefix = "my_project"
   vpc_endpoints = ["logs"]
@@ -40,7 +40,7 @@ module "network" {
 ## I want to add more subnets.
 ```terraform
 module "network" {
-  source         = "git@github.com:YAMABASS80/terraform-module-vpc-no-nat.git?ref=1.0.0"
+  source         = "git@github.com:YAMABASS80/terraform-module-vpc-isolated.git?ref=2.0.0"
   vpc_cidr_block = "10.0.0.0/16"
   resource_tag_prefix = "my_project"
   vpc_endpoints = ["logs"]
