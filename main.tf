@@ -1,9 +1,3 @@
-data "aws_availability_zones" "available" {
-  state = "available"
-}
-
-data "aws_region" "current" {}
-
 resource "aws_vpc" "this" {
   cidr_block = var.vpc_cidr_block
   enable_dns_support = true
