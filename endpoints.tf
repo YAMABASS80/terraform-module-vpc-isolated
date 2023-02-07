@@ -8,6 +8,9 @@ resource "aws_vpc_endpoint" "ssm" {
     aws_subnet.private_subnet_1.id,
     aws_subnet.private_subnet_2.id,
   ]
+  tags = {
+    "Name" = "${var.resource_tag_prefix}_ssm"
+  }
 }
 
 resource "aws_vpc_endpoint" "ec2messages" {
@@ -20,6 +23,9 @@ resource "aws_vpc_endpoint" "ec2messages" {
     aws_subnet.private_subnet_1.id,
     aws_subnet.private_subnet_2.id,
   ]
+  tags = {
+    "Name" = "${var.resource_tag_prefix}_ec2messages"
+  }
 }
 
 resource "aws_vpc_endpoint" "ssmmessages" {
@@ -32,4 +38,7 @@ resource "aws_vpc_endpoint" "ssmmessages" {
     aws_subnet.private_subnet_1.id,
     aws_subnet.private_subnet_2.id,
   ]
+  tags = {
+    "Name" = "${var.resource_tag_prefix}_ssmmessages"
+  }
 }
