@@ -9,4 +9,7 @@ resource "aws_security_group" "endpoint_sg" {
       from_port = 443
       to_port = 443
   }
+  tags = {
+    "Name" = "${var.resource_tag_prefix}_endpoint_sg"
+  }
 }
