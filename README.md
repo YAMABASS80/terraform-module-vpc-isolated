@@ -9,7 +9,7 @@ This module generates fully isolated VPC environment, where no intenet gateway a
 | ---- | ---- | ---- |
 |  vpc_cidr_block  |  string  | VPC CIDR range  |
 |  resource_tag_prefix  |  string  | Resource tag prefix for each resource. (default = "project_1")  |
-|  endpoints  |  list(string)  | List of VPC endoint service name, eg) ssm, es2messages (default = ["ssm", "ec2messages", "ssmmessages"])  |
+|  vpc_endpoints  |  list(string)  | List of VPC endoint service name, eg) ssm, es2messages (default = ["ssm", "ec2messages", "ssmmessages"])  |
 
 
 # Outputs
@@ -43,7 +43,7 @@ module "network" {
   source         = "git@github.com:YAMABASS80/terraform-module-vpc-isolated.git?ref=2.0.0"
   vpc_cidr_block = "10.0.0.0/16"
   resource_tag_prefix = "my_project"
-  vpc_endpoints = ["logs"]
+  vpc_endpoints = ["ssm", "ec2messages", "ssmmessages", "logs"]
 }
 
 resource "aws_subnet" "private_subnet_3" {
